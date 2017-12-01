@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Tab</title>
+        <!--Icons
+        ============================-->
+        <link rel="icon" type="image/png" href="static/images/beautifulicon.ico" />
+        <!--CSS and Bootstrap
+        ============================-->
+        <link rel="stylesheet" href="static/portals.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css">-->
+    </head>
+    <body>
+        <main>
+            <p>PORTALS MVP</p>
+            <div id="list">
+
+            </div>
+            <!--Content: The grid of links, possibly using bootstrap cards?-->
+            <div class="container">
+                <div id="grid"> 
+                </div>
+            </div>
+            <div class="right">
+                <h3>Choose your background style below:</h3>
+                <select id="background-choice">
+                    
+                    <option value="gradient">Gradient</option>
+                    
+                    <option value="solid-fill">Solid Color</option>
+                    
+                    <option value="no-color">No Background</option>
+
+                    <option value="animated-gradient">Animated Gradient</option>
+
+                
+                </select>
+            </div>
+        </main>
+        <footer>
+            <!--Content: The 2 icons described below, possibly a link to the portals landing page? (future version)-->
+            <div class="footer">
+                <p>
+                    <span>/Add/</span>
+               
+                
+                    <span class="center">Portals</span> 
+               
+             
+                    <span>/Edit/</span>
+               </p>
+            </div>
+        </footer>
+    </body>
+    <!--JS and JQuery scripts
+    =================================-->
+    <script src="portals.js"></script>
+    <script src="background.js"></script>
+    <!--<script
+        src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</html>
+
+<!--Requirements
+====================
+-User should see a grid containing their custom links in the middle of the page. Size: default to 9?  
+-Each link will have text displaying either the URL or the user-selected name
+-Each link will display a thumbnail image (image should be a screenshot of the site)
+-User should see an icon in the bottom left-hand corner that allows them to add a link to their grid
+-User should see another icon in the bottom right-hand corner that allows them to edit (rename, delete 
+    and in version 2, reorder their grid panel)
+-->

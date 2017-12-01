@@ -86,3 +86,18 @@ a {
 /*color options
 ==========================*/
 
+/*Keyframes
+===========================*/
+
+@keyframes CustomAnimationRad { 
+    0%{background-position:76% 100%}
+    25%{background-position:25% 100%}
+    75%{background-position:76% 0%}
+    100%{background-position:76% 100%}
+}
+
+@keyframes CustomAnimationLin { 
+    0%{background-position:0% 79%}
+    50%{background-position:100% 22%}
+    100%{background-position:0% 79%}
+}

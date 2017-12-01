@@ -36,10 +36,30 @@ function getValue(){
 }
 
 function setBackground(style){
-	// TODO add animated gradient
+	// TODO adjust randomization of animated gradient
 	// TODO change solid-fill to open color-picker and apply selection
-	if (style === "gradient") {
-		html.style.background = "linear-gradient(" + getRandom(360) + "deg, rgb(" + randomRGB() + "), rgb(" + randomRGB() + ")";
+	if (style === "animated-gradient") {
+		// Randomizes between linear and radial animated gradient
+		var randomGradientStyle = getRandom(1);
+		console.log(randomGradientStyle);
+		if (randomGradientStyle === 0) {
+			html.style.background = "radial-gradient(rgb(" + randomRGB() + "), rgb(" + randomRGB() + ")) 0% 0% / 200% 200%";
+			html.style.animation = "CustomAnimationRad 10s ease infinite";
+		} else if (randomGradientStyle === 1) {
+			html.style.background = "linear-gradient(" + getRandom(360) + "deg, rgb(" + randomRGB() + "), rgb(" + randomRGB() + ")) 0% 0% / 200% 200%";
+			html.style.animation = "CustomAnimationLin 7s ease infinite";
+		}
+
+	}else if (style === "gradient") {
+		// Randomizes between linear and radial gradient
+		var randomGradientStyle = getRandom(1);
+		console.log(randomGradientStyle);
+		if (randomGradientStyle === 0) {
+			html.style.background = "radial-gradient(rgb(" + randomRGB() + "), rgb(" + randomRGB() + ")";
+		} else if (randomGradientStyle === 1) {
+			html.style.background = "linear-gradient(" + getRandom(360) + "deg, rgb(" + randomRGB() + "), rgb(" + randomRGB() + ")";
+		}
+
 	}else if (style === "solid-fill") {
 		html.style.background = "none";
 		html.style.backgroundColor = "rgb(" + randomRGB() + ")";
@@ -49,5 +69,7 @@ function setBackground(style){
 	}
 } 
 
+
 // Set initial background to gradient 
-setBackground("gradient");
+setBackground("animated-gradient");
+

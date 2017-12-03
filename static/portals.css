@@ -3,6 +3,8 @@ html {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
 }
 
 .container {
@@ -13,12 +15,18 @@ html {
 
 #grid {
     margin: 7% auto;
+    display:grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 150px 150px 150px 150px 150px 150px;
 }
 .square {
-    min-width: 20%;
+    display:grid;
+    grid-template-columns: 185px;
+    grid-template-rows: 25px 110px;
+    /* min-width: 20%;
 	max-width: 15%;
     min-height: 100px;
-    max-height: 20%;
+    max-height: 20%; */
 	background-color: silver;
 	/*padding-bottom: 15%;*/
 	float: left;
@@ -30,7 +38,7 @@ html {
     text-transform:capitalize;
 }
 
-.left{
+/* .left{
     margin-left: 13.2%;
 }
 
@@ -43,7 +51,7 @@ html {
     top: 70%;
     bottom: 10%;
     left: 80%;
-}
+} */
 
 footer {
     position: fixed;
@@ -68,11 +76,16 @@ footer {
 
 .tileheader {
     background: white;
+    display:grid;
+    grid-template-columns: 30px 170px;
+    grid-template-rows: 30px;
 }
 
-.tileheader span {
-    padding-bottom: 4px;
+.titlediv {
+    padding-top: 3%;
     overflow: none;
+    padding-bottom: 4px;
+    
     white-space: nowrap;
 }
 p{

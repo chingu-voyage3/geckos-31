@@ -36,6 +36,7 @@ function setSquares(gridSites) {
         tileHeader.classList.add("tileheader");
         var iconDiv = tileHeader.appendChild(document.createElement("div"));
         var titleDiv = tileHeader.appendChild(document.createElement("div"));
+        titleDiv.classList.add("titlediv");
         var icon = iconDiv.appendChild(document.createElement("img"));
         icon.src = "static/images/beautifulicon.ico";
         icon.classList.add("favicon");

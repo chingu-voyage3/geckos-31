@@ -17,7 +17,6 @@
     "browser_action": {
         "default_icon": {"16": "static/images/beautifulicon.png"}
     },
-    "default_title": "Portals Test",
 
     "chrome_url_overrides": {
         "newtab": "index.html"}

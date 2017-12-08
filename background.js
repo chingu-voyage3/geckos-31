@@ -71,5 +71,5 @@ function setBackground(style){
 
 
 // Set initial background to gradient 
-setBackground("animated-gradient");
+setBackground("gradient");
 

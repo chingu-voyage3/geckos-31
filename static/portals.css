@@ -5,8 +5,13 @@ html {
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
-}
 
+}
+main {
+    display: grid;
+    grid-template-columns: flex;
+    grid-template-rows: 92% 8%;
+}
 .container {
 	width: 40%;
     height:100%;
@@ -16,13 +21,15 @@ html {
 #grid {
     margin: 7% auto;
     display:grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 150px 150px 150px 150px 150px 150px;
+    grid-template-columns: 31% 31% 31%;
+    grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
+    grid-row-gap: 10%;
 }
 .square {
     display:grid;
-    grid-template-columns: 185px;
+    grid-template-columns: 100%;
     grid-template-rows: 25px 110px;
+    grid-row-gap: 10%;
     /* min-width: 20%;
 	max-width: 15%;
     min-height: 100px;
@@ -38,6 +45,9 @@ html {
     text-transform:capitalize;
 }
 
+.thumbnail {
+    overflow:hidden;
+}
 /* .left{
     margin-left: 13.2%;
 }
@@ -45,27 +55,32 @@ html {
 .middle {
     margin: 2% 0;
 }
+*/
 
 .right {
     position: absolute;
     top: 70%;
     bottom: 10%;
     left: 80%;
-} */
+} 
 
 footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
 }
-.footer {
-    margin: 2%;
-    text-align: center;
+.footer1 {
+    margin: 3% 3% 3% 8%;
+    text-align: left;
+    width: 100%;
 }
 
-.center {
-    margin-left: 43%;
-    margin-right: 44%;
+.footer2 {
+    margin: 3% 8% 3% 3%;
+    text-align: right;
 }
 
 .favicon {
@@ -82,14 +97,11 @@ footer {
 }
 
 .titlediv {
-    padding-top: 3%;
+    padding-top: 2%;
     overflow: none;
     padding-bottom: 4px;
     
     white-space: nowrap;
-}
-p{
-    
 }
 
 a {

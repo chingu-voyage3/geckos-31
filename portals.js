@@ -1,3 +1,44 @@
+// TODO: FIX IMPORT/EXPORT FOR THE FOLLOWING:
+//===========================================
+
+var gridSize = 18;
+var gridSizeForm = document.getElementById("gridSize");
+
+// event listener to listen for changes to gridSize form
+gridSizeForm.addEventListener('change', getGridSizeValue);
+
+function getGridSizeValue(){
+	var gridSizeValue = gridSizeForm.value;
+	setGridSize(gridSizeValue);
+}
+
+function setGridSize(value) {
+    // contains conditionals for all possible grid size values
+    if (value == "3") {
+        gridSize = 3;
+    } else if (value = "4") {
+        gridSize = 4;
+    } else if (value = "9") {
+        gridSize = 9;
+    } else if (value = "12") {
+        gridSize =12;
+    } else if (value = "18") {
+        gridSize = 18;
+    }
+
+    return saveGridSize(gridSize);
+    
+}
+
+// function to save updated gridSize to localStorage
+function saveGridSize(value) {
+
+    window.localStorage.setItem("gridsize", String(value));
+
+}
+
+// END OF GRIDSIZE STUFF
+// ===================================
 
 var gridSites = [
 //TODO: add favicon, picture and (eventually) last visited date to objects in this list
@@ -7,7 +48,6 @@ var gridSites = [
     // "favicon": "static/images/beautiful.ico"}
 ]
 
-var gridSize = 18;
 var grid = document.getElementById("grid");
 
 // onclick event for any tiles -
@@ -27,30 +67,33 @@ var grid = document.getElementById("grid");
 function setSquares(gridSites) {
     grid.classList.add("grid");
     for (var i = 0; i < gridSize; i++) {
+        
         var link = grid.appendChild(document.createElement("a"));
         link.href = gridSites[i].url;
         
         var square = link.appendChild(document.createElement("div"));
+        square.classList.add("square");
+        // square.style.background = "url(static/images/image.png)";
         
+  
         var tileHeader = square.appendChild(document.createElement("div"));
         tileHeader.classList.add("tileheader");
+
         var iconDiv = tileHeader.appendChild(document.createElement("div"));
-        var titleDiv = tileHeader.appendChild(document.createElement("div"));
-        titleDiv.classList.add("titlediv");
         var icon = iconDiv.appendChild(document.createElement("img"));
         icon.src = "static/images/beautifulicon.ico";
         icon.classList.add("favicon");
+        
+        var titleDiv = tileHeader.appendChild(document.createElement("div"));
+        titleDiv.classList.add("titlediv");
+
         var siteName = titleDiv.appendChild(document.createElement("span"));
         siteName.innerHTML = gridSites[i].title;
         
-        square.classList.add("square");
-        if ((i+1) % 3 === 1) {
-            square.classList.add("left");
-        }
-        if ((i+1) % 3 === 2) {
-            square.classList.add("middle");
-        }
-        square.style.background = "url(static/images/image.png)";
+        var thumbnail = square.appendChild(document.createElement("img"))
+        thumbnail.src = "static/images/image.png";
+        thumbnail.classList.add("thumbnail");
+
         
     }
 }

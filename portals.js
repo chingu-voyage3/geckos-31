@@ -1,6 +1,6 @@
 // TODO: FIX IMPORT/EXPORT FOR THE FOLLOWING:
 //===========================================
-
+var oldGridSize;
 var gridSize;
 var gridSizeForm = document.getElementById("gridSize");
 
@@ -8,29 +8,32 @@ var gridSizeForm = document.getElementById("gridSize");
 gridSizeForm.addEventListener('change', getGridSizeValue);
 
 function getGridSizeValue(){
-    // console.log("getGridSizeValue happening now");
-	var gridSizeValue = gridSizeForm.value;
+    console.log("getGridSizeValue happening now");
+    var gridSizeValue = gridSizeForm.value;
+    console.log(gridSizeValue + " is the gridSizeValue");
 	setGridSize(gridSizeValue);
 }
 
 function setGridSize(value) {
-    // contains conditionals for all possible grid size values
-    // console.log("setting gridSize now");
-    // console.log("value is: " + String(value));
-    // console.log("value is type: " + String(typeof(value)));
-    if (value == "3") {
-        gridSize = 3;
-    } else if (value == "4") {
-        gridSize = 4;
-    } else if (value == "9") {
-        gridSize = 9;
-    } else if (value == "12") {
-        gridSize = 12;
-    } else if (value == "18") {
-        gridSize = 18;
-    }
+    //contains conditionals for all possible grid size values
+    console.log("setting gridSize now");
+    console.log("value is: " + String(value));
+    //console.log("value is type: " + String(typeof(value)));
+    // if (value == "3") {
+    //     gridSize = 3;
+    // } else if (value == "4") {
+    //     gridSize = 4;
+    // } else if (value == "9") {
+    //     gridSize = 9;
+    // } else if (value == "12") {
+    //     gridSize = 12;
+    // } else if (value == "18") {
+    //     gridSize = 18;
+    // }
+    gridSize = parseInt(value);
+    console.log("gridSize changed to " + gridSize + " and is type: " + typeof(gridSize));
 
-    return saveGridSize(gridSize);
+    saveGridSize(gridSize);
     
 }
 
@@ -38,7 +41,7 @@ function setGridSize(value) {
 function saveGridSize(value) {
 
     window.localStorage.setItem("gridsize", String(value));
-    var toDelete = document.getElementsByClassName("urls");
+    var toDelete = grid.children;
     while (toDelete.length > 0) {
         toDelete[0].remove();
     }
@@ -130,15 +133,16 @@ function buildPopupDom(mostVisitedURLs) {
 // TODO: else if - gridList.length < gridSize - fill in rest of grid with topSites
 
 if (window.localStorage.gridsize) {
-    gridSize = window.localStorage.gridsize;
-    gridSizeForm.value = gridSize;
+    gridSize = parseInt(window.localStorage.gridsize);
+    console.log(gridSize + ", is type " + typeof gridSize)
+    gridSizeForm.value = String(gridSize);
 } else {
     gridSize = 9;
     gridSizeForm.value = gridSize;
 }
 if (gridList.length === 0) {
     chrome.topSites.get(buildPopupDom);
-    // console.log("gridSize is: " + String(gridSize));
+    console.log("gridSize is: " + String(gridSize));
  } else {
     setSquares(gridList);
 }

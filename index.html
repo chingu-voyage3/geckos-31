@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>New Tab</title>
+<head>
+    <title>New Tab</title>
         <!--Icons
-        ============================-->
-        <link rel="icon" type="image/png" href="static/images/beautifulicon.ico" />
+            ============================-->
+            <link rel="icon" type="image/png" href="static/images/beautifulicon.ico" />
         <!--CSS and Bootstrap
-        ============================-->
-        <link rel="stylesheet" href="static/portals.css">
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css">-->
-    </head>
-    <body>
+            ============================-->
+            <link rel="stylesheet" href="static/portals.css">
+            <link rel="stylesheet" href="static/menus.css">
+            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css">-->
+        </head>
+        <body>
 
-        <main>
-            <div id="list">
+            <main>
+                <div id="list">
 
-            </div>
-            <!--Content: The grid of links, possibly using bootstrap cards?-->
-            <div class="container">
-                <div id="grid"> 
                 </div>
-            </div>
-            <div class="right">
+                <!--Content: The grid of links, possibly using bootstrap cards?-->
+                <div class="container">
+                    <div id="grid"> 
+                    </div>
+                </div>
+                <div class="right">
 
-                <h3>Choose your grid size below:</h3>
-                <select id="gridSize">
+<!--                     <h3>Choose your grid size below:</h3>
+                    <select id="gridSize">
 
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="9">9</option>
-                    <option value="12">12</option>
-                    <option value="18">18</option>
-                
-                </select>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="9">9</option>
+                        <option value="12">12</option>
+                        <option value="18">18</option>
 
-                <h3>Choose your background style below:</h3>
+                    </select> -->
+
+<!--                 <h3>Choose your background style below:</h3>
                 <select id="background-choice">
                     
                     <option value="gradient">Gradient</option>
@@ -45,35 +46,65 @@
                     
                     <option value="no-color">No Background</option>
 
-                </select>
+                </select> -->
             </div>
         </main>
+        <div class="popupMenu hidden">
+
+                        <h3>Choose your grid size below:</h3>
+                        <select id="gridSize">
+
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+
+                        </select>
+
+
+
+            <h3>Choose your background style below:</h3>
+            <select id="background-choice">
+
+                <option value="gradient">Gradient</option>
+
+                <option value="animated-gradient">Animated Gradient</option>
+
+                <option value="solid-fill">Solid Color</option>
+
+                <option value="no-color">No Background</option>
+
+            </select>
+        </div>
         <footer>
             <!--Content: The 2 icons described below, possibly a link to the portals landing page? (future version)-->
             <div class="footer1">
-                    <img height="64px" width="64px" src="static/images/plussign.png">
-               
+                <img height="64px" width="64px" src="static/images/plussign.png">
+
                 
-                    <!-- <span class="center">Portals</span>  -->
+                <!-- <span class="center">Portals</span>  -->
             </div>
             <div class="footer2">
-                <img height="58px" width="58px" src="static/images/beautifulicog.png">
+
+                <img height="58px" width="58px" id="cog" src="static/images/beautifulicog.png">
             </div>
         </footer>
     </body>
     <!--JS and JQuery scripts
-    =================================-->
-    <script src="gridSize.js"></script>
-    <script src="portals.js"></script>
-    <script src="background.js"></script>
-    
+        =================================-->
+        <script src="gridSize.js"></script>
+        <script src="portals.js"></script>
+        <script src="background.js"></script>
+        <script src="menus.js"></script>
+
     <!--<script
         src="http://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-</html>
+    </html>
 
 <!--Requirements
 ====================

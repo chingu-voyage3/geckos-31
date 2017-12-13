@@ -1,0 +1,21 @@
+.popupMenu {
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 3%;
+	height: 300px;
+	width: 150px;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 0;
+	right: 2.5%;
+	top: 60%;
+
+}
+
+
+
+.hidden {
+	display: none;
+}
+

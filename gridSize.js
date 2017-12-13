@@ -1,29 +1,25 @@
-var gridSize = 18;
+var gridSize;
 var gridSizeForm = document.getElementById("gridSize");
 
 // event listener to listen for changes to gridSize form
 gridSizeForm.addEventListener('change', getGridSizeValue);
 
 function getGridSizeValue(){
-	var gridSizeValue = gridSizeForm.value;
+    // console.log("getGridSizeValue happening now");
+    var gridSizeValue = gridSizeForm.value;
+    // console.log(gridSizeValue + " is the gridSizeValue");
 	setGridSize(gridSizeValue);
 }
 
 function setGridSize(value) {
-    // contains conditionals for all possible grid size values
-    if (value == "3") {
-        gridSize = 3;
-    } else if (value = "4") {
-        gridSize = 4;
-    } else if (value = "9") {
-        gridSize = 9;
-    } else if (value = "12") {
-        gridSize =12;
-    } else if (value = "18") {
-        gridSize = 18;
-    }
+    //contains conditionals for all possible grid size values
+    // console.log("setting gridSize now");
+    // console.log("value is: " + String(value));
+    //console.log("value is type: " + String(typeof(value)));
+    gridSize = parseInt(value);
+    // console.log("gridSize changed to " + gridSize + " and is type: " + typeof(gridSize));
 
-    return saveGridSize(gridSize);
+    saveGridSize(gridSize);
     
 }
 
@@ -31,13 +27,11 @@ function setGridSize(value) {
 function saveGridSize(value) {
 
     window.localStorage.setItem("gridsize", String(value));
+    var toDelete = grid.children;
+    while (toDelete.length > 0) {
+        toDelete[0].remove();
+    }
+    grid.classList.remove("grid");
+    return setSquares(gridList);
 
 }
-
-// export { 
-//     gridSize, 
-//     gridSizeForm, 
-//     getGridSizeValue, 
-//     setGridSize, 
-//     saveGridSize 
-// };

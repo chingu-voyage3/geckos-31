@@ -32,6 +32,6 @@ function saveGridSize(value) {
         toDelete[0].remove();
     }
     grid.classList.remove("grid");
-    return setSquares(gridList);
+    return setTiles(tileList);
 
 }

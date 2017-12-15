@@ -67,9 +67,22 @@ function setBackground(style){
 		html.style.background = "none";
 		html.style.backgroundColor = "white";
 	}
+
+	saveBackgroundChoice(style);
 } 
 
+// function to save background selection to localStorage
+function saveBackgroundChoice(style) {
+
+    window.localStorage.setItem("backgroundchoice", style);
+}
 
 // Set initial background to gradient 
-setBackground("gradient");
+if (window.localStorage.backgroundchoice) {
+	setBackground(window.localStorage.backgroundchoice);
+	backgroundForm.value = window.localStorage.backgroundchoice;
+} else {
+	setBackground("gradient");
+}
+
 

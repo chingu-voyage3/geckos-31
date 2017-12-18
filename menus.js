@@ -1,9 +1,13 @@
+// Event listener on cog icon - opens/closes settings menu
+
 var cog = document.getElementById("cog");
-var popupMenu = document.querySelector(".popupMenu");
+var settingsMenu = document.querySelector(".popupMenu");
 
 
 cog.addEventListener('click', function() {
 	console.log("This is working")
-	popupMenu.classList.toggle("hidden");
+	settingsMenu.classList.toggle("hidden");
 });
+
+// Event listener on plus sign icon - open/closes add item menu
 

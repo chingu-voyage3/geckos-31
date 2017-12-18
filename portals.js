@@ -27,40 +27,46 @@ function setTiles(tileList) {
     grid.classList.add("grid");
     // if (gridSize >  tileList.length)
     for (var i = 0; i < gridSize; i++) {
-        console.log("current tile is: " + String(tileList[i].title));
+        //console.log("current tile is: " + String(tileList[i].title));
         console.log("i is: " + i);
-        //TODO: Create placeholder tiles when gridSize exceeds number of sites 
-        // if (i >= tileList.length) {
-        //     var placeholder = grid.appendChild(document.createElement("div"));
-        //     placeholder.classList.add("square");
-        //     var plusIcon = placeholder.appendChild(document.createElement("img"));
-        //     plusIcon.src = "static/images/plussign.png";     
-        // }
-        var link = grid.appendChild(document.createElement("a"));
-        link.href = tileList[i].url;
-        link.classList.add("urls");
-        
-        var square = link.appendChild(document.createElement("div"));
-        square.classList.add("square");        
-  
-        var tileHeader = square.appendChild(document.createElement("div"));
-        tileHeader.classList.add("tileheader");
+        //
+        if (i >= tileList.length) {
+            console.log("adding placeholder")
+            var addMenuLink = grid.appendChild(document.createElement("a"));
+            addMenuLink.href = "#";
+            // addMenuLink.classList.add("urls");
+            var placeholder = addMenuLink.appendChild(document.createElement("div"));
+            placeholder.classList.add("placeholder");
+            var plusIcon = placeholder.appendChild(document.createElement("img"));
+            plusIcon.src = "static/images/plussign.png"; 
+            plusIcon.classList.add("plus-sign")    
+        } else {
+            console.log("adding regular tile")
+            var link = grid.appendChild(document.createElement("a"));
+            link.href = tileList[i].url;
+            link.classList.add("urls");
+            
+            var square = link.appendChild(document.createElement("div"));
+            square.classList.add("square");        
+    
+            var tileHeader = square.appendChild(document.createElement("div"));
+            tileHeader.classList.add("tileheader");
 
-        var iconDiv = tileHeader.appendChild(document.createElement("div"));
-        var icon = iconDiv.appendChild(document.createElement("img"));
-        icon.src = tileList[i].favicon;
-        icon.classList.add("favicon");
-        
-        var titleDiv = tileHeader.appendChild(document.createElement("div"));
-        titleDiv.classList.add("titlediv");
+            var iconDiv = tileHeader.appendChild(document.createElement("div"));
+            var icon = iconDiv.appendChild(document.createElement("img"));
+            icon.src = tileList[i].favicon;
+            icon.classList.add("favicon");
+            
+            var titleDiv = tileHeader.appendChild(document.createElement("div"));
+            titleDiv.classList.add("titlediv");
 
-        var siteName = titleDiv.appendChild(document.createElement("span"));
-        siteName.innerHTML = tileList[i].title;
-        
-        var thumbnail = square.appendChild(document.createElement("img"))
-        thumbnail.src = tileList[i].screenshot;
-        thumbnail.classList.add("thumbnail");
-
+            var siteName = titleDiv.appendChild(document.createElement("span"));
+            siteName.innerHTML = tileList[i].title;
+            
+            var thumbnail = square.appendChild(document.createElement("img"))
+            thumbnail.src = tileList[i].screenshot;
+            thumbnail.classList.add("thumbnail");
+        }
         saveTiles(tileList);
     }
 }

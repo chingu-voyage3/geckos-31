@@ -19,5 +19,15 @@
     },
 
     "chrome_url_overrides": {
-        "newtab": "index.html"}
+        "newtab": "index.html"},
+
+    "background": { 
+        "scripts": ["chromeBackground.js"]
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["getTabInfo.js"]
+        }
+    ]
 }

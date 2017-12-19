@@ -13,25 +13,17 @@ var grid = document.getElementById("grid");
     // if no favicon - tabs.getCurrent to populate the favicon url in tileList
     // set last visited date to current time
 
-//
-
 // captureVisibleTab - get screenshot image and save to tileList
 
 // after any changes to tileList, save to localStorage
 
 
 // Populates grid with items from tileList - title and link to URL only 
-
 function setTiles(tileList) {
-    console.log("setting tiles now");
     grid.classList.add("grid");
-    // if (gridSize >  tileList.length)
     for (var i = 0; i < gridSize; i++) {
-        //console.log("current tile is: " + String(tileList[i].title));
-        console.log("i is: " + i);
-        //
+        
         if (i >= tileList.length) {
-            console.log("adding placeholder")
             var addMenuLink = grid.appendChild(document.createElement("a"));
             addMenuLink.href = "#";
             // addMenuLink.classList.add("urls");
@@ -40,8 +32,8 @@ function setTiles(tileList) {
             var plusIcon = placeholder.appendChild(document.createElement("img"));
             plusIcon.src = "static/images/plussign.png"; 
             plusIcon.classList.add("plus-sign")    
+        
         } else {
-            console.log("adding regular tile")
             var link = grid.appendChild(document.createElement("a"));
             link.href = tileList[i].url;
             link.classList.add("urls");
@@ -76,8 +68,6 @@ function saveTiles(tiles) {
     window.localStorage.setItem("tilelist", JSON.stringify(tiles));
 }
 
-// TODO: write test to see if changes made to tileList, and if not, show most recent grid
-
 // pushes topSites to tileList list
 function buildPopupDom(mostVisitedURLs) {
 
@@ -105,7 +95,6 @@ function buildFromLS(tiles) {
 
 // loads page topSites
 // TODO : figure out persistence to load user-selected sites
-// TODO: else if - tileList.length < gridSize - fill in rest of grid with topSites
 
 if (window.localStorage.gridsize) {
     gridSize = parseInt(window.localStorage.gridsize);

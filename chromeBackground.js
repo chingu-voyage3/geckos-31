@@ -20,13 +20,14 @@ chrome.runtime.onMessage.addListener(function (message, sender, response) {
         console.log("url saved in localStorage: " + current);
         console.log("sender.tab.url is: " + sender.tab.url);
         console.log("");
-        if (sender.tab.url === current || // perfect match (https)
-            prefix + urlBody === current || // http prefix
-            urlBody === current || // no http
-            prefix + shortUrl === current || // no www.
-            sender.tab.url === "https://mail.google.com/mail/u/0/" || //gmail
-            sentURL.search(/https:\/\/www\.linkedin\.com\/[a-z]*\/*/i) !== -1) { 
-            console.log("Match found")
+        if (sender.tab.url === current // perfect match (https)
+            || prefix + urlBody === current // http prefix
+            || urlBody === current // no http
+            || prefix + shortUrl === current // no www.
+            || sender.tab.url === "https://mail.google.com/mail/u/0/" //gmail
+            //|| sentURL.search("linkedin")
+            ) { 
+            console.log("------Match found------")
             var url = currentTiles[i].url;
             var favicon = sender.tab.favIconUrl;
             var tabId = sender.tab.id;

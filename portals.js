@@ -6,7 +6,7 @@ var tileList = [
     // "favicon": "static/images/beautiful.ico"}
 ]
 var grid = document.getElementById("grid");
-var currentTiles = JSON.parse(window.localStorage.tilelist);
+
 
 // onclick event for any tiles -
 function printTabInfo(url, favicon, tabId) {
@@ -19,6 +19,7 @@ function printTabInfo(url, favicon, tabId) {
 
 // if no favicon - tabs.getCurrent to populate the favicon url in tileList
 function addFavIcon(favicon, url) {
+    let currentTiles = JSON.parse(window.localStorage.tilelist);
     for (var i = 0; i < currentTiles.length; i++) {
         // finds match in our current list
         console.log("currentTiles url is: " + currentTiles[i].url);

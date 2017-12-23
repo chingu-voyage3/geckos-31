@@ -23,7 +23,7 @@
         "newtab": "index.html"},
 
     "background": { 
-        "scripts": ["chromeBackground.js"]
+        "page": "background.html"
     }, 
     "content_scripts": [
         {

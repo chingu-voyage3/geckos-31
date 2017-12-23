@@ -101,8 +101,12 @@ footer {
 .favicon {
     padding: 4px;
     border-radius: 30%;
-
 }
+
+ img.favicon {
+    height: 19px;
+    width: 19px;
+ }
 
 .tileheader {
     background: white;

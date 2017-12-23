@@ -11,7 +11,8 @@
         "tabs", // getCurrent, create, captureVisibleTab
         "topSites", // get to get array of most visited urls
         "<all_urls>", // needed for captureVisibleTab
-        "unlimitedStorage" // images and links
+        "storage", // needed for storage.sync and storage.local 
+        "unlimitedStorage" // images and links - possibly not needed if using chrome storage
     ],
 
     "browser_action": {
@@ -19,5 +20,15 @@
     },
 
     "chrome_url_overrides": {
-        "newtab": "index.html"}
+        "newtab": "index.html"},
+
+    "background": { 
+        "page": "background.html"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["getTabInfo.js"]
+        }
+    ]
 }

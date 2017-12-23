@@ -5,33 +5,50 @@ var tileList = [
     // "screenshot":"thumbnail view",
     // "favicon": "static/images/beautiful.ico"}
 ]
-
 var grid = document.getElementById("grid");
+var currentTiles = JSON.parse(window.localStorage.tilelist);
 
 // onclick event for any tiles -
+function printTabInfo(url, favicon, tabId) {
+    console.log("URL is: " + url);
+    console.log("faviconURL is: " + favicon);
+    console.log("tabId is: " + tabId);
+    addFavIcon(favicon, url)
+}
 
-    // if no favicon - tabs.getCurrent to populate the favicon url in tileList
-    // set last visited date to current time
 
-//
+// if no favicon - tabs.getCurrent to populate the favicon url in tileList
+function addFavIcon(favicon, url) {
+    for (var i = 0; i < currentTiles.length; i++) {
+        // finds match in our current list
+        console.log("currentTiles url is: " + currentTiles[i].url);
+        console.log("url is: " + url);
+        if (currentTiles[i].url === url) {
+            console.log("match found")
+            console.log(currentTiles[i].favicon);
+            // checks to see the default favicon is used
+            if (currentTiles[i].favicon === "static/images/beautifulicon.ico"){
+                console.log("resetting favicon")
+                currentTiles[i].favicon = favicon;
+                console.log(currentTiles[i].favicon);
 
+                //refresh items in grid
+                return saveTiles(currentTiles);
+            }
+        }
+    }
+}
+
+// TODO:
+// set last visited date to current time
 // captureVisibleTab - get screenshot image and save to tileList
 
-// after any changes to tileList, save to localStorage
-
-
 // Populates grid with items from tileList - title and link to URL only 
-
 function setTiles(tileList) {
-    console.log("setting tiles now");
     grid.classList.add("grid");
-    // if (gridSize >  tileList.length)
     for (var i = 0; i < gridSize; i++) {
-        //console.log("current tile is: " + String(tileList[i].title));
-        console.log("i is: " + i);
-        //
+        
         if (i >= tileList.length) {
-            console.log("adding placeholder")
             var addMenuLink = grid.appendChild(document.createElement("a"));
             addMenuLink.href = "#";
             // addMenuLink.classList.add("urls");
@@ -40,8 +57,8 @@ function setTiles(tileList) {
             var plusIcon = placeholder.appendChild(document.createElement("img"));
             plusIcon.src = "static/images/plussign.png"; 
             plusIcon.classList.add("plus-sign")    
+        
         } else {
-            console.log("adding regular tile")
             var link = grid.appendChild(document.createElement("a"));
             link.href = tileList[i].url;
             link.classList.add("urls");
@@ -76,8 +93,6 @@ function saveTiles(tiles) {
     window.localStorage.setItem("tilelist", JSON.stringify(tiles));
 }
 
-// TODO: write test to see if changes made to tileList, and if not, show most recent grid
-
 // pushes topSites to tileList list
 function buildPopupDom(mostVisitedURLs) {
 
@@ -104,8 +119,7 @@ function buildFromLS(tiles) {
 }
 
 // loads page topSites
-// TODO : figure out persistence to load user-selected sites
-// TODO: else if - tileList.length < gridSize - fill in rest of grid with topSites
+// TODO : load user-added sites
 
 if (window.localStorage.gridsize) {
     gridSize = parseInt(window.localStorage.gridsize);

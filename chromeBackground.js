@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, response) {
             || prefix + urlBody === current // http prefix
             || urlBody === current // no http
             || prefix + shortUrl === current // no www.
-            || sender.tab.url === "https://mail.google.com/mail/u/0/" //gmail
+            //|| sender.tab.url === "https://mail.google.com/mail/u/0/" //gmail
             //|| sentURL.search("linkedin")
             ) { 
             console.log("------Match found------")

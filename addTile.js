@@ -1,35 +1,50 @@
 var newTile = {};
 
 var addTileForm = document.querySelector('.plusSignMenu'); 
-var button = document.getElementById('addTileButton');
+var addTileButton = document.getElementById('addTileButton');
 var formUrl = document.getElementById('tileUrl');
 var formTitle = document.getElementById('tileTitle');
+var cancelAddTileButton = document.getElementById('cancelAddTile');
+
+// Event Listeners
+addTileButton.addEventListener('click', getTileData);
+cancelAddTileButton.addEventListener('click', cancelAddTile);
 
 
-button.addEventListener('click', getTileData);
-
-
+// Listener Functions
 function getTileData(){
-    console.log("button was clicked");
-    console.log("url is: " + formUrl.value);
-    console.log("title is: " + formTitle.value);
-    
-    // assign new Tile data
-    newTile.title = formTitle.value,
-    newTile.url = formUrl.value,
-    newTile.favicon = "static/images/beautifulicon.ico",
-    newTile.screenshot = "static/images/image.png"
+    // checks that URL and Title fields have content
+    if (formTitle.value !== "" && formUrl.value !== "") {
+        // assign new Tile data
+        newTile.title = formTitle.value,
+        newTile.url = formUrl.value,
+        newTile.favicon = "static/images/beautifulicon.ico",
+        newTile.screenshot = "static/images/image.png"
 
-    console.log(newTile);
-    console.log("tilelist length is: " + tileList.length);
-    // add to tileList
-    tileList.push(newTile);
-    console.log("after adding, tileList length is: " + tileList.length);
-    
-    //reset text input fields
+        // add to tileList and repopulate grid
+        tileList.push(newTile);    
+        clearAddTileFields();
+        resetGrid(tileList);
+    }if (formTitle.value === "") {
+        formTitle.classList.add("error");
+
+    }if (formUrl.value === "") {
+        formUrl.classList.add("error");
+    }
+
+
+}
+
+function cancelAddTile(){
+    clearAddTileFields();
+    toggleHideMenu(plusSignMenu);
+}
+
+function clearAddTileFields(){
+    // reset text input fields
     formUrl.value = "";
     formTitle.value = "";
-
-    resetGrid(tileList);
+    formTitle.classList.remove("error");
+    formUrl.classList.remove("error");
 
 }

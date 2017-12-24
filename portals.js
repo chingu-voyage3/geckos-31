@@ -3,7 +3,8 @@ var tileList = [
     // {"title":"name of website",
     // "url":"url",
     // "screenshot":"thumbnail view",
-    // "favicon": "static/images/beautiful.ico"}
+    // "favicon": "static/images/beautiful.ico",
+    // "category": "uncategorized"}
 ]
 var grid = document.getElementById("grid");
 

@@ -14,19 +14,22 @@
 	background-color: white;
 	border: 1px solid black;
 	border-radius: 3%;
-	height: 150px;
+	height: 190px;
 	width: 175px;
 	text-align: center;
 	vertical-align: middle;
 	margin-right: 0;
 }
 
-
 .hidden {
 	display: none;
 }
 
+input.error::-webkit-input-placeholder {
+  color: red;
+}
+
 /* TODO: fix width of labels */
-#tileUrl, #tileTitle {
+#tileUrl, #tileTitle, #tileCategory{
 	width: 165px;
 }

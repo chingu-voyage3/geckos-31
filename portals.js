@@ -61,7 +61,7 @@ function setTiles(tileList) {
             plusIcon.src = "static/images/plussign.png"; 
             plusIcon.classList.add("plus-sign");
             placeholder.addEventListener('click', function () {
-                plusSignMenu.classList.toggle('hidden');
+                toggleHideMenu(plusSignMenu);
             })
         
         } else {

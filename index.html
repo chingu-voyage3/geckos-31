@@ -14,8 +14,13 @@
         <body>
 
             <main>
-                <div id="list">
-
+                <div class="left">
+                    <div class="plusSignMenu hidden">
+                        <h3> Add a new tile to your grid:</h3>
+                        <input type="text" id="tileUrl" placeholder="URL - must include http(s)://" />
+                        <input type="text" id="tileTitle" placeholder="add name of website here" />
+                        <button id="addTileButton">Add to grid!</button>
+                    </div>
                 </div>
                 <!--Content: The grid of links, possibly using bootstrap cards?-->
                 <div class="container">
@@ -24,63 +29,39 @@
                 </div>
                 <div class="right">
 
-<!--                     <h3>Choose your grid size below:</h3>
+                <div class="settingsMenu hidden">
+                        
+                    <h3>Choose your grid size below:</h3>
                     <select id="gridSize">
-
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="9">9</option>
                         <option value="12">12</option>
                         <option value="18">18</option>
-
-                    </select> -->
-
-<!--                 <h3>Choose your background style below:</h3>
-                <select id="background-choice">
-                    
-                    <option value="gradient">Gradient</option>
-
-                    <option value="animated-gradient">Animated Gradient</option>
-                    
-                    <option value="solid-fill">Solid Color</option>
-                    
-                    <option value="no-color">No Background</option>
-
-                </select> -->
+                    </select>
+                        
+                        
+                        
+                    <h3>Choose your background style below:</h3>
+                    <select id="background-choice">
+                        
+                        <option value="gradient">Gradient</option>
+                        
+                        <option value="animated-gradient">Animated Gradient</option>
+                        
+                        <option value="solid-fill">Solid Color</option>
+                        
+                        <option value="no-color">No Background</option>
+                        
+                    </select>
+                </div>
             </div>
         </main>
-        <div class="popupMenu hidden">
 
-                        <h3>Choose your grid size below:</h3>
-                        <select id="gridSize">
-
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="9">9</option>
-                            <option value="12">12</option>
-                            <option value="18">18</option>
-
-                        </select>
-
-
-
-            <h3>Choose your background style below:</h3>
-            <select id="background-choice">
-
-                <option value="gradient">Gradient</option>
-
-                <option value="animated-gradient">Animated Gradient</option>
-
-                <option value="solid-fill">Solid Color</option>
-
-                <option value="no-color">No Background</option>
-
-            </select>
-        </div>
         <footer>
             <!--Content: The 2 icons described below, possibly a link to the portals landing page? (future version)-->
             <div class="footer1">
-                <img height="64px" width="64px" src="static/images/plussign.png">
+                <img height="64px" width="64px" id="plusSign" src="static/images/plussign.png">
 
                 
                 <!-- <span class="center">Portals</span>  -->
@@ -97,6 +78,7 @@
         <script src="portals.js"></script>
         <script src="background.js"></script>
         <script src="menus.js"></script>
+        <script src="addTile.js"></script>
         <script src="chromeBackground.js"></script>
         
 

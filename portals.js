@@ -52,13 +52,16 @@ function setTiles(tileList) {
         
         if (i >= tileList.length) {
             var addMenuLink = grid.appendChild(document.createElement("a"));
-            addMenuLink.href = "#";
+            addMenuLink.href = "#plusSign";
             // addMenuLink.classList.add("urls");
             var placeholder = addMenuLink.appendChild(document.createElement("div"));
             placeholder.classList.add("placeholder");
             var plusIcon = placeholder.appendChild(document.createElement("img"));
             plusIcon.src = "static/images/plussign.png"; 
-            plusIcon.classList.add("plus-sign")    
+            plusIcon.classList.add("plus-sign");
+            placeholder.addEventListener('click', function () {
+                plusSignMenu.classList.toggle('hidden');
+            })
         
         } else {
             var link = grid.appendChild(document.createElement("a"));
@@ -93,6 +96,7 @@ function setTiles(tileList) {
 function saveTiles(tiles) {
 
     window.localStorage.setItem("tilelist", JSON.stringify(tiles));
+
 }
 
 // pushes topSites to tileList list
@@ -118,6 +122,16 @@ function buildFromLS(tiles) {
     }
     console.log("Done, tileList is : " + tileList.length);
     setTiles(tileList);
+}
+
+function resetGrid(tiles) {
+    var toDelete = grid.children;
+    while (toDelete.length > 0) {
+        toDelete[0].remove();
+    }
+    grid.classList.remove("grid");
+    
+    return setTiles(tiles);
 }
 
 // loads page topSites

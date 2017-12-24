@@ -30,15 +30,9 @@ main {
     grid-template-columns: 100%;
     grid-template-rows: 25px 110px;
     grid-row-gap: 10%;
-    /* min-width: 20%;
-	max-width: 15%;
-    min-height: 100px;
-    max-height: 20%; */
 	background-color: silver;
-	/*padding-bottom: 15%;*/
 	float: left;
 	margin: 2% 6.66%;
-    /*border: solid 1px black;*/
     overflow:hidden;
     border-radius: 3%;
     box-shadow: 2px 2px 1px #888888;
@@ -63,15 +57,13 @@ main {
 .plus-sign {
     margin: 0 auto;
 }
-/* .left{
-    margin-left: 13.2%;
-}
 
-.middle {
-    margin: 2% 0;
+ .left {
+    position: absolute;
+    top: 50%;
+    bottom: 10%;
+    right: 80%;
 }
-*/
-
 .right {
     position: absolute;
     top: 50%;

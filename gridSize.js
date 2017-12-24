@@ -27,11 +27,7 @@ function setGridSize(value) {
 function saveGridSize(value) {
 
     window.localStorage.setItem("gridsize", String(value));
-    var toDelete = grid.children;
-    while (toDelete.length > 0) {
-        toDelete[0].remove();
-    }
-    grid.classList.remove("grid");
-    return setTiles(tileList);
+    
+    resetGrid(tileList);
 
 }

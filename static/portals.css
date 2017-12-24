@@ -1,0 +1,139 @@
+html {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+}
+main {
+    display: grid;
+    grid-template-columns: flex;
+    grid-template-rows: 92% 8%;
+}
+.container {
+	width: 40%;
+    height:100%;
+	margin: 20px auto;
+}
+
+#grid {
+    margin: 7% auto;
+    display:grid;
+    grid-template-columns: 31% 31% 31%;
+    grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
+    grid-row-gap: 10%;
+}
+.square {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25px 110px;
+    grid-row-gap: 10%;
+	background-color: silver;
+	float: left;
+	margin: 2% 6.66%;
+    overflow:hidden;
+    border-radius: 3%;
+    box-shadow: 2px 2px 1px #888888;
+    text-transform:capitalize;
+}
+
+.thumbnail {
+    overflow:hidden;
+}
+
+.placeholder {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25px 110px;
+    grid-row-gap: 10%;
+    background-color: white;
+    opacity: .3;
+    overflow:hidden;
+    border-radius: 3%;
+    margin: 2% 6.66%;
+}
+.plus-sign {
+    margin: 0 auto;
+}
+
+ .left {
+    position: absolute;
+    top: 50%;
+    bottom: 10%;
+    right: 80%;
+}
+.right {
+    position: absolute;
+    top: 50%;
+    bottom: 10%;
+    left: 80%;
+} 
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+.footer1 {
+    margin: 3% 3% 3% 8%;
+    text-align: left;
+    width: 100%;
+}
+
+.footer2 {
+    margin: 3% 8% 3% 3%;
+    text-align: right;
+}
+
+.favicon {
+    padding: 4px;
+    border-radius: 30%;
+}
+
+ img.favicon {
+    height: 19px;
+    width: 19px;
+ }
+
+.tileheader {
+    background: white;
+    display:grid;
+    grid-template-columns: 30px 170px;
+    grid-template-rows: 30px;
+}
+
+.titlediv {
+    padding-top: 2%;
+    overflow: none;
+    padding-bottom: 4px;
+    
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/*color options
+==========================*/
+
+/*Keyframes
+===========================*/
+
+@keyframes CustomAnimationRad { 
+    0%{background-position:76% 100%}
+    25%{background-position:25% 100%}
+    75%{background-position:76% 0%}
+    100%{background-position:76% 100%}
+}
+
+@keyframes CustomAnimationLin { 
+    0%{background-position:0% 79%}
+    50%{background-position:100% 22%}
+    100%{background-position:0% 79%}
+}

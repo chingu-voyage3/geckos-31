@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, response) {
             var tabId = sender.tab.id;
             // call function in portals.js
             printTabInfo(url, favicon, tabId);
-            //break;
+            break;
         }
     }
 });

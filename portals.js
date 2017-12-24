@@ -26,6 +26,7 @@ function addFavIcon(favicon, url) {
         console.log("url is: " + url);
         if (currentTiles[i].url === url) {
             console.log("match found")
+            match = true;
             console.log(currentTiles[i].favicon);
             // checks to see the default favicon is used
             if (currentTiles[i].favicon === "static/images/beautifulicon.ico"){

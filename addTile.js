@@ -23,7 +23,7 @@ function getTileData(){
 
         // add to tileList and repopulate grid
         tileList.push(newTile);    
-        clearAddTileFields();
+        cancelAddTile();
         resetGrid(tileList);
     }if (formTitle.value === "") {
         formTitle.classList.add("error");

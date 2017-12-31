@@ -68,6 +68,7 @@ function setTiles(tileList) {
             var link = grid.appendChild(document.createElement("a"));
             link.href = tileList[i].url;
             link.classList.add("urls");
+            link.id = i;
             
             var square = link.appendChild(document.createElement("div"));
             square.classList.add("square");        

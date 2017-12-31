@@ -30,6 +30,23 @@
                         <button id="cancelAddTile">Cancel</button>
                         <button id="addTileButton">Add to grid!</button>
                     </div>
+                    <div id="minusSignMenu" class="minusSignMenu hidden">
+                        <h3>Edit or delete a tile</h3>
+                        <p>Click a tile in your grid to edit or delete</p>
+                        <input type="text" id="editTileUrl" placeholder="URL - must include http(s)://" required/>
+                        <input type="text" id="editTileTitle" placeholder="edit name of website here" required/>
+                        <select id="tileCategory" placeholder="choose category" list="categoryList">
+                            <option value="Productivity">Productivity</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="News">News</option>
+                            <option value="Crafts">Crafts</option>
+                            <option value="Uncategorized">Uncategorized</option>
+                        </select>
+                        <hr>
+                        <button id="cancelEditTile">Cancel</button>
+                        <button id="editTileButton">Save changes D:</button>
+                        <button id="deleteTileButton"><span style="background-color: red;">DELETE</span></button>
+                    </div>
                 </div>
                 <!--Content: The grid of links, possibly using bootstrap cards?-->
                 <div class="container">
@@ -71,6 +88,7 @@
             <!--Content: The 2 icons described below, possibly a link to the portals landing page? (future version)-->
             <div class="footer1">
                 <img height="64px" width="64px" id="plusSign" src="static/images/plussign.png">
+                <img height="50px" width="50px" id="minusSign" src="static/images/minussign.png">
 
                 
                 <!-- <span class="center">Portals</span>  -->
@@ -88,6 +106,7 @@
         <script src="background.js"></script>
         <script src="menus.js"></script>
         <script src="addTile.js"></script>
+        <script src="editTile.js"></script>
         <script src="chromeBackground.js"></script>
         
 

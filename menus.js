@@ -27,4 +27,7 @@ function toggleHideMenu(menu) {
 	if (menu === plusSignMenu) {
 		clearAddTileFields();
 	}
+	if (menu === minusSignMenu) {
+		toggleEditMode();
+	}
 }

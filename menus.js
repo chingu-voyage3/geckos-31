@@ -29,5 +29,6 @@ function toggleHideMenu(menu) {
 	}
 	if (menu === minusSignMenu) {
 		toggleEditMode();
+		console.log("calling toggleEditMode");
 	}
 }

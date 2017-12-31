@@ -1,0 +1,53 @@
+purpose of background script:
+    communicate information from outside webpages to your extension code.
+purpose of content script:
+    pass information to your extension when user is not on your page.  
+
+when a user moves to a new webpage, the content script will send sender info to background script. (tabID and tab URL and favIconUrl)
+
+background script will cross check the tab URL against tileList (chrome.runtime.onMessage.addListener function)
+    If match is found:
+        background script will send tab information to portals
+            - tabID (sender.tab.id)
+            - tabURL (sender.url)
+            - favIconUrl (sender.tab.favIconUrl)
+            - sitetitle (sender.tab.title)
+        
+        portals will check if item is missing favicon and/or screenshot
+            if missing:
+                portals will pull info using tabID, and update localStorage with the new information
+            if not missing:
+                portals will check last updated time for that item in tileList
+                    if time > time limit (3 days):
+                        portals will pull info using tabID, and update localStorage with new information
+
+Next steps:
+- update manifest.json to include content scripts
+- write a content script that will send the tab URL to background 
+- write the background script that will have an event listener for messages from content scripts 
+- write a whole bunch of conditionals for background script
+
+
+{"id":"dgbmcdbfjedleecbilomfklggkckpamd",
+"url":"http://adventofcode.com/",
+"tab":{ "active":true,
+        "audible":false,
+        "autoDiscardable":true,
+        "discarded":false,
+        "favIconUrl":"http://adventofcode.com/favicon.ico?2",
+        "height":780,
+        "highlighted":true,
+        "id":423,
+        "incognito":false,
+        "index":2,
+        "mutedInfo":{
+            "muted":false
+            },
+        "pinned":false,
+        "selected":true,
+        "status":"complete",
+        "title":"Advent of Code 2017",
+        "url":"http://adventofcode.com/",
+        "width":969,
+        "windowId":417},
+"frameId":0}

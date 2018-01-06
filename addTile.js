@@ -1,4 +1,4 @@
-var newTile = {};
+
 
 var addTileForm = document.querySelector('.plusSignMenu'); 
 var addTileButton = document.getElementById('addTileButton');
@@ -15,7 +15,10 @@ cancelAddTileButton.addEventListener('click', cancelAddTile);
 function getTileData(){
     // checks that URL and Title fields have content
     if (formTitle.value !== "" && formUrl.value !== "") {
-        // assign new Tile data
+        //TODO: get parsed localstorage tilelist and assign to var so we can add to it!
+        // will probably need to happen in edit tiles too
+        // assign new Tile data - this may be obsolete now
+        var newTile = {};
         newTile.title = formTitle.value,
         newTile.url = formUrl.value,
         newTile.favicon = "static/images/beautifulicon.ico",

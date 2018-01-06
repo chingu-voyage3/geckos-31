@@ -28,7 +28,9 @@ function toggleHideMenu(menu) {
 		clearAddTileFields();
 	}
 	if (menu === minusSignMenu) {
-		toggleEditMode();
 		console.log("calling toggleEditMode");
+		clearEditTileFields();
+		toggleEditMode();
+		
 	}
 }

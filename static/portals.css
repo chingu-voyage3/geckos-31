@@ -19,7 +19,7 @@ main {
 }
 
 #grid {
-    margin: 7% auto;
+    margin: 14% auto;
     display:grid;
     grid-template-columns: 31% 31% 31%;
     grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
@@ -84,6 +84,10 @@ footer {
     margin: 3% 3% 3% 8%;
     text-align: left;
     width: 100%;
+}
+
+#minusSign {
+    margin-bottom: 1%;
 }
 
 .footer2 {

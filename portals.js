@@ -8,12 +8,11 @@ var tileList = [
 ]
 var grid = document.getElementById("grid");
 
-
 // onclick event for any tiles -
 function printTabInfo(url, favicon, tabId) {
-    console.log("URL is: " + url);
-    console.log("faviconURL is: " + favicon);
-    console.log("tabId is: " + tabId);
+    // console.log("URL is: " + url);
+    // console.log("faviconURL is: " + favicon);
+    // console.log("tabId is: " + tabId);
     addFavIcon(favicon, url)
 }
 
@@ -23,17 +22,17 @@ function addFavIcon(favicon, url) {
     let currentTiles = JSON.parse(window.localStorage.tilelist);
     for (var i = 0; i < currentTiles.length; i++) {
         // finds match in our current list
-        console.log("currentTiles url is: " + currentTiles[i].url);
-        console.log("url is: " + url);
+        // console.log("currentTiles url is: " + currentTiles[i].url);
+        // console.log("url is: " + url);
         if (currentTiles[i].url === url) {
-            console.log("match found")
+            // console.log("match found")
             match = true;
-            console.log(currentTiles[i].favicon);
+            // console.log(currentTiles[i].favicon);
             // checks to see the default favicon is used
             if (currentTiles[i].favicon === "static/images/beautifulicon.ico"){
-                console.log("resetting favicon")
+                // console.log("resetting favicon")
                 currentTiles[i].favicon = favicon;
-                console.log(currentTiles[i].favicon);
+                // console.log(currentTiles[i].favicon);
 
                 //refresh items in grid
                 return saveTiles(currentTiles);
@@ -157,4 +156,34 @@ if (window.localStorage.tilelist) {
 } else {
     console.log("Tilelist is probably: " + String(tileList.length));
     chrome.topSites.get(buildPopupDom);
+}
+// Logic to pull thumbnails!
+//==========================
+
+// listeners don't seem to be applied to node list
+// how can we pass tile info to other helper functions?
+
+var tilesWithUrls = document.querySelectorAll("a.urls");
+function addGridListeners(list, action, fn){
+    for (var i = 0; i < list.length; i++) {
+        list[i].addEventListener(action, fn, false);   
+    }
+}
+addGridListeners(tilesWithUrls, 'click', function() {
+    console.log("Something was clicked!");
+})
+
+
+function getTileInfo(tileUrl) {
+    
+    // for (var i = 0; i < tileList.length; i++) {
+    //     if (tileList[i].url === tileUrl) {
+    //         checkThumbnails(tileList[i]);
+    //         console.log("tileUrl match found!");
+    //         console.log("index is: " + String(i) + " and tile is " + tileList[i].url)
+    //     }
+    // }
+}
+function checkThumbnails(tile) {
+    console.log("Thumbnails checked!");
 }

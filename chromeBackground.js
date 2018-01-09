@@ -17,9 +17,9 @@ chrome.runtime.onMessage.addListener(function (message, sender, response) {
         //console.log("linkedin var: " + linkedin);
         // console.log("prefix + urlbody: " + prefix + urlBody);
         // console.log("URL without prefix: " + urlBody);
-        console.log("url saved in localStorage: " + current);
-        console.log("sender.tab.url is: " + sender.tab.url);
-        console.log("");
+        // console.log("url saved in localStorage: " + current);
+        // console.log("sender.tab.url is: " + sender.tab.url);
+        // console.log("");
         if (sender.tab.url === current // perfect match (https)
             || prefix + urlBody === current // http prefix
             || urlBody === current // no http
@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, response) {
             //|| sender.tab.url === "https://mail.google.com/mail/u/0/" //gmail
             //|| sentURL.search("linkedin")
             ) { 
-            console.log("------Match found------")
+            // console.log("------Match found------")
             var url = currentTiles[i].url;
             var favicon = sender.tab.favIconUrl;
             var tabId = sender.tab.id;

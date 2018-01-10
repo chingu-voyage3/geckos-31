@@ -4,8 +4,20 @@
 
 var testString = "TEST";
 
+// TODO: try message passing to get this running
+function getScreenshot() {
+    console.log("getScreenshot is running!");
+    chrome.tabs.captureVisibleTab(function(screenshotUrl) {
+        console.log(screenshotUrl);
+    })
+}
+
+
 chrome.runtime.onMessage.addListener(function (message, sender, response) {
     console.log("running listener");
+    // try: if message == "screenshot":
+        // do captureVisibleTab
+    
     let currentTiles = JSON.parse(window.localStorage.tilelist);
     for (var i = 0; i < currentTiles.length; i++) {
     	let sentURL = sender.tab.url;

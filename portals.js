@@ -161,43 +161,23 @@ if (window.localStorage.tilelist) {
 //==========================
 
 
-var tilesWithUrls = document.querySelectorAll("a.urls");
+var tilesWithUrls = document.getElementsByClassName("urls");
 
 // takes care of closure issue and alerts index and href-----------------
 
 for( var i = 0; i < tilesWithUrls.length; i++ ) {
-        tilesWithUrls[i].addEventListener('click', listener.bind( null, i) );
+        tilesWithUrls[i].addEventListener('click', checkTileData.bind( null, i) );
 }
-
-function listener(index) {
-         alert(index);
-         alert(tilesWithUrls[index].href)
+// use index to access the tile from tileList at that index.
+// check if screenshot is the default
+    // if set from site, do nothing.
+    // if default, call function to grab new screenshot when clicked.
+function checkTileData(index) {
+    var currentTile = tileList[index];    
+    if (currentTile.screenshot == "static/images/image.png"){
+        alert("needs new screenshot");
+        // todo: send message to chromeBackground instead of calling function
+        getScreenshot();
+    }
+    // TODO: add check to see when updated last here
 }
-
-// -----------------------------------------------------------------
-
-    // for (var i = 0; i < tilesWithUrls.length; i++) {
-        
-    //     tilesWithUrls[i].addEventListener("click", function() {
-    //         var test = eval(i);
-    //         alert(test)
-    //     });   
-    // }
-//} addGridListeners(tilesWithUrls, 'click', function() {
-//     alert(currentTarget);
-// })
-
-
-// function getTileInfo(tileUrl) {
-    
-//     // for (var i = 0; i < tileList.length; i++) {
-//     //     if (tileList[i].url === tileUrl) {
-//     //         checkThumbnails(tileList[i]);
-//     //         console.log("tileUrl match found!");
-//     //         console.log("index is: " + String(i) + " and tile is " + tileList[i].url)
-//     //     }
-//     // }
-// }
-// function checkThumbnails(tile) {
-//     console.log("Thumbnails checked!");
-// }

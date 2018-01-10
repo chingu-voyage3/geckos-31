@@ -160,30 +160,44 @@ if (window.localStorage.tilelist) {
 // Logic to pull thumbnails!
 //==========================
 
-// listeners don't seem to be applied to node list
-// how can we pass tile info to other helper functions?
 
 var tilesWithUrls = document.querySelectorAll("a.urls");
-function addGridListeners(list, action, fn){
-    for (var i = 0; i < list.length; i++) {
-        list[i].addEventListener(action, fn, false);   
-    }
+
+// takes care of closure issue and alerts index and href-----------------
+
+for( var i = 0; i < tilesWithUrls.length; i++ ) {
+        tilesWithUrls[i].addEventListener('click', listener.bind( null, i) );
 }
-addGridListeners(tilesWithUrls, 'click', function() {
-    console.log("Something was clicked!");
-})
 
+function listener(index) {
+         alert(index);
+         alert(tilesWithUrls[index].href)
+}
 
-function getTileInfo(tileUrl) {
-    
-    // for (var i = 0; i < tileList.length; i++) {
-    //     if (tileList[i].url === tileUrl) {
-    //         checkThumbnails(tileList[i]);
-    //         console.log("tileUrl match found!");
-    //         console.log("index is: " + String(i) + " and tile is " + tileList[i].url)
-    //     }
+// -----------------------------------------------------------------
+
+    // for (var i = 0; i < tilesWithUrls.length; i++) {
+        
+    //     tilesWithUrls[i].addEventListener("click", function() {
+    //         var test = eval(i);
+    //         alert(test)
+    //     });   
     // }
-}
-function checkThumbnails(tile) {
-    console.log("Thumbnails checked!");
-}
+//} addGridListeners(tilesWithUrls, 'click', function() {
+//     alert(currentTarget);
+// })
+
+
+// function getTileInfo(tileUrl) {
+    
+//     // for (var i = 0; i < tileList.length; i++) {
+//     //     if (tileList[i].url === tileUrl) {
+//     //         checkThumbnails(tileList[i]);
+//     //         console.log("tileUrl match found!");
+//     //         console.log("index is: " + String(i) + " and tile is " + tileList[i].url)
+//     //     }
+//     // }
+// }
+// function checkThumbnails(tile) {
+//     console.log("Thumbnails checked!");
+// }

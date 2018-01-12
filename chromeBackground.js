@@ -5,19 +5,28 @@
 var testString = "TEST";
 
 // TODO: try message passing to get this running
-function getScreenshot() {
+function getScreenshot(index) {
+    
     console.log("getScreenshot is running!");
     chrome.tabs.captureVisibleTab(function(screenshotUrl) {
-        console.log(screenshotUrl);
+        // need to change the format of the screenshotURL, 
+        // or assign to an actual url before sending to portals
+        // if we save the data from the image to a url will it display?  
+        // does it need to go through a conversion process?
+        // try playing with code from example
+        console.log("sending screenshotURL to Portals");
+        assignScreenshot(Number(index), screenshotUrl);
     })
 }
 
 
 chrome.runtime.onMessage.addListener(function (message, sender, response) {
     console.log("running listener");
-    // try: if message == "screenshot":
-        // do captureVisibleTab
-    
+    if (message.length > 5){
+        console.log("Message coming from grid click")
+        getScreenshot(message[0]);
+    }
+
     let currentTiles = JSON.parse(window.localStorage.tilelist);
     for (var i = 0; i < currentTiles.length; i++) {
     	let sentURL = sender.tab.url;

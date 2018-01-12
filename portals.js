@@ -16,6 +16,9 @@ function printTabInfo(url, favicon, tabId) {
     addFavIcon(favicon, url)
 }
 
+function assignScreenshot(index, url) {
+    tileList[index].screenshot = url;
+}
 
 // if no favicon - tabs.getCurrent to populate the favicon url in tileList
 function addFavIcon(favicon, url) {
@@ -175,9 +178,10 @@ for( var i = 0; i < tilesWithUrls.length; i++ ) {
 function checkTileData(index) {
     var currentTile = tileList[index];    
     if (currentTile.screenshot == "static/images/image.png"){
-        alert("needs new screenshot");
         // todo: send message to chromeBackground instead of calling function
-        getScreenshot();
+        chrome.runtime.sendMessage(
+            String(index) + " needs screenshot"
+        );
     }
     // TODO: add check to see when updated last here
 }

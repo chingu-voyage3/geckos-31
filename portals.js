@@ -64,7 +64,7 @@ function setTiles(tileList) {
             siteName.innerHTML = tileList[i].title;
             
             var thumbnail = square.appendChild(document.createElement("img"))
-            thumbnail.src = tileList[i].screenshot;
+            thumbnail.src = tileList[i].favicon;
             thumbnail.classList.add("thumbnail");
         }
         saveTiles(tileList);

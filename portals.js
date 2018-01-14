@@ -15,6 +15,7 @@ function assignScreenshot(index, url) {
 function addFavIcon(favicon, index) { 
     let currentTiles = JSON.parse(window.localStorage.tilelist);
     currentTiles[index].favicon = favicon;
+    currentTiles[index].screenshot = favicon;
     return saveTiles(currentTiles);    
 }
 

@@ -52,15 +52,15 @@ function setTiles(tileList) {
             var tileHeader = square.appendChild(document.createElement("div"));
             tileHeader.classList.add("tileheader");
 
-            var iconDiv = tileHeader.appendChild(document.createElement("div"));
-            var icon = iconDiv.appendChild(document.createElement("img"));
-            icon.src = tileList[i].favicon;
-            icon.classList.add("favicon");
+            // var iconDiv = tileHeader.appendChild(document.createElement("div"));
+            // var icon = iconDiv.appendChild(document.createElement("img"));
+            // icon.src = tileList[i].favicon;
+            // icon.classList.add("favicon");
             
             var titleDiv = tileHeader.appendChild(document.createElement("div"));
             titleDiv.classList.add("titlediv");
 
-            var siteName = titleDiv.appendChild(document.createElement("span"));
+            var siteName = titleDiv.appendChild(document.createElement("p"));
             siteName.innerHTML = tileList[i].title;
             
             var thumbnail = square.appendChild(document.createElement("img"))

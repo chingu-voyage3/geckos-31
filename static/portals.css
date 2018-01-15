@@ -3,8 +3,8 @@ html {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
 
 }
 main {
@@ -35,7 +35,6 @@ main {
 	float: left;
 	margin: 2% 6.66%;
     overflow:hidden;
-    border-radius: 3%;
     /* box-shadow: 2px 2px 1px #888888; */
     text-transform:capitalize;
 }
@@ -53,18 +52,18 @@ main {
 
 .placeholder {
     display:grid;
+    width: 200px;
     grid-template-columns: 100%;
     grid-template-rows: 25px 50px;
     grid-row-gap: 10%;
     background-color: white;
     opacity: .3;
     overflow:hidden;
-    border-radius: 3%;
     margin: 2% 6.66%;
 }
 
 .plus-sign {
-    margin: 0 auto;
+    margin: 7% auto;
     height: 50px;
     width: 50px;
 }
@@ -87,7 +86,6 @@ footer {
     bottom: 0px;
     width: 100%;
     display: grid;
-    z-index: -999;
     grid-template-columns: 50% 50%;
 
 }
@@ -95,10 +93,6 @@ footer {
     margin: 3% 3% 3% 8%;
     text-align: left;
     width: 100%;
-}
-
-#minusSign {
-    margin-bottom: 1%;
 }
 
 .footer2 {
@@ -120,20 +114,26 @@ footer {
 .tileheader {
     background: rgba(0, 0, 0, 0);
     color: white;
-    font-weight: bold;
+    margin: auto;
     display: grid;
     grid-template-columns: 30px 170px;
     grid-template-rows: 30px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .titlediv {
     padding-top: 2%;
     overflow: none;
     padding-bottom: 4px;
-    
+    width: 200px;
     white-space: nowrap;
 }
-
+.titlediv p {
+    text-align: center;
+    margin-top: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
 a {
     text-decoration: none;
     color: black;

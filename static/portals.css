@@ -86,7 +86,6 @@ footer {
     bottom: 0px;
     width: 100%;
     display: grid;
-    z-index: -999;
     grid-template-columns: 50% 50%;
 
 }
@@ -94,10 +93,6 @@ footer {
     margin: 3% 3% 3% 8%;
     text-align: left;
     width: 100%;
-}
-
-#minusSign {
-    margin-bottom: 1%;
 }
 
 .footer2 {

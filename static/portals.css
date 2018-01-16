@@ -39,6 +39,16 @@ main {
     text-transform:capitalize;
 }
 
+.square:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+.square:active {
+    background-color: rgba(0, 0, 0, 0.419);
+    color: white;
+}
+
 .thumbnail {
     overflow:hidden;
     height: 25px;
@@ -60,6 +70,10 @@ main {
     opacity: .3;
     overflow:hidden;
     margin: 2% 6.66%;
+}
+
+.placeholder:hover {
+    background-color: rgba(0, 0, 0, 0.419);
 }
 
 .plus-sign {
@@ -133,7 +147,17 @@ footer {
     margin-top: 10px;
     padding-left: 7px;
     padding-right: 7px;
+    color: inherit;
 }
+
+.square:hover .titlediv {
+    color: black;
+}
+
+.square:active .titlediv {
+    color: white;
+}
+
 a {
     text-decoration: none;
     color: black;

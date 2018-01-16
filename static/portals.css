@@ -114,6 +114,36 @@ footer {
     text-align: right;
 }
 
+#plusSign {
+    height: 50px;
+    width: 50px;
+}
+
+#plusSign:hover {
+    height: 60px;
+    width: 60px;
+}
+
+#minusSign {
+    height:50px;
+    width: 50px;
+}
+
+#minusSign:hover {
+    height:60px;
+    width: 60px;
+}
+
+#cog {
+    height: 58px;
+    width: 58px;
+}
+
+#cog:hover {
+    height: 68px;
+    width: 68px;
+}
+
 .favicon {
     padding: 4px;
     border-radius: 30%;

@@ -34,6 +34,7 @@ function setTiles(tileList) {
             placeholder.classList.add("placeholder");
             var plusIcon = placeholder.appendChild(document.createElement("img"));
             plusIcon.src = "static/images/plussign.png"; 
+            plusIcon.alt = "Add a tile";
             plusIcon.classList.add("plus-sign");
             placeholder.addEventListener('click', function () {
                 toggleHideMenu(plusSignMenu);

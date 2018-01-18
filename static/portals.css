@@ -19,7 +19,7 @@ main {
 }
 
 #grid {
-    margin: 14% auto;
+    margin: 20% auto;
     display:grid;
     grid-template-columns: 31% 31% 31%;
     grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
@@ -98,6 +98,7 @@ main {
 footer {
     position: fixed;
     bottom: 0px;
+    max-height: 120px;
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -105,18 +106,21 @@ footer {
 }
 .footer1 {
     margin: 3% 3% 3% 8%;
+    max-height: 120px;
     text-align: left;
     width: 100%;
 }
 
 .footer2 {
     margin: 3% 8% 3% 3%;
+    max-height: 120px;
     text-align: right;
 }
 
 #plusSign {
     height: 50px;
     width: 50px;
+    opacity: 0.419;
 }
 
 #plusSign:hover {
@@ -127,6 +131,7 @@ footer {
 #minusSign {
     height:50px;
     width: 50px;
+    opacity: 0.419;
 }
 
 #minusSign:hover {
@@ -137,6 +142,7 @@ footer {
 #cog {
     height: 58px;
     width: 58px;
+    opacity: 0.519;
 }
 
 #cog:hover {
@@ -191,6 +197,20 @@ footer {
 a {
     text-decoration: none;
     color: black;
+}
+
+.gridMenu {
+    height: 58px;
+    width: 75px;
+}
+
+.gridMenu * {
+    height: 20px;
+    width: 28px;
+    background: rgba(0, 0, 0, 0.419);
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 2px;
 }
 /*color options
 ==========================*/

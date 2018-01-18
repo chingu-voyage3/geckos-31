@@ -11,16 +11,41 @@
 }
 
 .plusSignMenu {
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 3%;
-	height: 190px;
-	width: 175px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.419);
+	/* border: 1px solid black; */
+	/* border-radius: 3%; */
+	height: 255px;
+	width: 225px;
 	text-align: center;
+	color: white;
 	vertical-align: middle;
-	margin-right: 0;
+	padding-top: 5%;
 }
-
+.plusSignMenu input, .plusSignMenu select{
+	height: 10%;
+	margin-top: 5%;
+	width: 77.5%;
+	opacity: .7; 
+}
+select#tileCategory {
+	border-radius: 0;
+	-webkit-appearance: none;
+	width:76.5%;
+	height: 12.5%;
+	padding-left: 3px;
+	margin-left: 3px;
+}
+.plusSignMenu button{
+	margin: 15% 2%;
+	width: 78px;
+	background: white;
+    opacity: .7;
+	padding: 3% 1%;
+	
+}
 .minusSignMenu {
 	background-color: white;
 	border: 1px solid black;
@@ -39,7 +64,9 @@
 input.error::-webkit-input-placeholder {
   color: red;
 }
-
+ #tileCategory disabled {
+	 color: rgb(116, 116, 116);
+ }
 /* TODO: fix width of labels */
 #tileUrl, #tileTitle, #tileCategory{
 	width: 165px;

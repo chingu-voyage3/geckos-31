@@ -1,4 +1,5 @@
 .settingsMenu {
+	z-index: 100;
 	position: absolute;
 	bottom: 1.3em;
 	left: 89em;
@@ -12,6 +13,7 @@
 }
 
 .plusSignMenu, #minusSignMenu {
+	z-index: 100;
 	position: absolute;
 	bottom: 1.3em;
 	left: 2em;

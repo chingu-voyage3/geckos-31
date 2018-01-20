@@ -1,22 +1,21 @@
 .settingsMenu {
-	
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 3%;
-	height: 300px;
-	width: 150px;
+	position: absolute;
+	bottom: 1.3em;
+	left: 89em;
+	background-color: rgba(0, 0, 0, 0.419);
+	height: 230px;
+	width: 225px;
 	text-align: center;
+	color: white;
 	vertical-align: middle;
-	margin-right: 0;
+	padding-top: 5%;
 }
 
-.plusSignMenu {
+.plusSignMenu, #minusSignMenu {
 	position: absolute;
-	bottom: 0;
-	left: 0;
+	bottom: 1.3em;
+	left: 2em;
 	background-color: rgba(0, 0, 0, 0.419);
-	/* border: 1px solid black; */
-	/* border-radius: 3%; */
 	height: 255px;
 	width: 225px;
 	text-align: center;
@@ -24,37 +23,50 @@
 	vertical-align: middle;
 	padding-top: 5%;
 }
-.plusSignMenu input, .plusSignMenu select{
+.plusSignMenu input, .plusSignMenu select, .minusSignMenu input, .minusSignMenu select, .settingsMenu select {
 	height: 10%;
 	margin-top: 5%;
 	width: 77.5%;
 	opacity: .7; 
 }
-select#tileCategory {
+select#tileCategory, select#gridSize, select#background-choice{
 	border-radius: 0;
 	-webkit-appearance: none;
 	width:76.5%;
 	height: 12.5%;
 	padding-left: 3px;
-	margin-left: 3px;
+	margin-left: 1px;
 }
-.plusSignMenu button{
+.plusSignMenu button, .minusSignMenu button{
 	margin: 15% 2%;
+	margin-bottom: 2%;
 	width: 78px;
 	background: white;
     opacity: .7;
 	padding: 3% 1%;
 	
 }
-.minusSignMenu {
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 3%;
-	height: 260px;
-	width: 175px;
-	text-align: center;
-	vertical-align: middle;
-	margin-right: 0;
+
+#minusSignMenu {
+	height: 345px; 
+}
+
+#deleteTileButton {
+	margin-top: 0;
+}
+#deleteTileButton:hover {
+	background: red;
+	opacity: .6;
+	color: white;
+	font-weight: bold;
+}
+select#tileEditCategory {
+    border-radius: 0;
+    -webkit-appearance: none;
+    width: 80.2%;
+    height: 12.5%;
+    padding-left: 3px;
+    margin-left: 1px;
 }
 
 .hidden {

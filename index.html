@@ -17,36 +17,42 @@
             <main>
                 <div class="left">
                     <div class="plusSignMenu hidden">
-                        <h3> Add a new tile to your grid:</h3>
-                        <input type="text" id="tileUrl" placeholder="URL - must include http(s)://" required/>
+                        <h3> Add a tile to your grid:</h3>
+                        
                         <input type="text" id="tileTitle" placeholder="add name of website here" required/>
+                        <input type="text" id="tileUrl" placeholder="URL - must include http(s)://" required/>
+                        
                         <select id="tileCategory" placeholder="choose category" list="categoryList">
+                            <option value="none" class="grey" selected disabled >Choose a category below <span class="arrow">&#9662;</span></option>
                             <option value="Productivity">Productivity</option>
                             <option value="Entertainment">Entertainment</option>
                             <option value="News">News</option>
                             <option value="Crafts">Crafts</option>
                             <option value="Uncategorized">Uncategorized</option>
                         </select>
-                        <hr>
-                        <button id="cancelAddTile">Cancel</button>
-                        <button id="addTileButton">Add to grid!</button>
+                        <div>
+                            <button id="addTileButton">Add to Grid</button>
+                            <button id="cancelAddTile">Cancel</button>
+                        </div>
+                 
                     </div>
                     <div id="minusSignMenu" class="minusSignMenu hidden">
                         <h3>Edit or delete a tile</h3>
-                        <p>Click a tile in your grid to edit or delete</p>
+                        <p>Click a tile to edit or delete</p>
                         <input type="text" id="editTileUrl" placeholder="URL - must include http(s)://" required/>
                         <input type="text" id="editTileTitle" placeholder="edit name of website here" required/>
-                        <select id="tileCategory" placeholder="choose category" list="categoryList">
+                        <select id="tileEditCategory" placeholder="choose category" list="categoryList">
+                            <option value="none" class="grey" selected disabled >Choose a category below<span class="arrow">&#9662;</span></option>
                             <option value="Productivity">Productivity</option>
                             <option value="Entertainment">Entertainment</option>
                             <option value="News">News</option>
                             <option value="Crafts">Crafts</option>
                             <option value="Uncategorized">Uncategorized</option>
                         </select>
-                        <hr>
+                        <button id="editTileButton">Save Edits</button>
                         <button id="cancelEditTile">Cancel</button>
-                        <button id="editTileButton">Save changes D:</button>
-                        <button id="deleteTileButton"><span style="background-color: red;">DELETE</span></button>
+                        <button title="This can't be undone" id="deleteTileButton">Delete</button>
+
                     </div>
                 </div>
                 <!--Content: The grid of links, possibly using bootstrap cards?-->
@@ -58,8 +64,9 @@
 
                 <div class="settingsMenu hidden">
                         
-                    <h3>Choose your grid size below:</h3>
+                    <h3>Choose grid size below:</h3>
                     <select id="gridSize">
+                        <option value="none" class="grey" selected disabled >Choose number of tiles below<span class="arrow">&#9662;</span></option>
                         <option value="3">3</option>
                         <option value="6">6</option>
                         <option value="9">9</option>
@@ -72,36 +79,24 @@
                         
                         
                         
-                    <h3>Choose your background style below:</h3>
+                    <h3>Choose background style below:</h3>
                     <select id="background-choice">
-                        
+
+                        <option value="none" class="grey" selected disabled >Choose background style below<span class="arrow">&#9662;</span></option>
                         <option value="gradient">Gradient</option>
-                        
                         <option value="animated-gradient">Animated Gradient</option>
-                        
-                        <option value="solid-fill">Solid Color</option>
-                        
+                        <option value="solid-fill">Solid Color</option>                        
                         <option value="no-color">No Background</option>
                         
                     </select>
                 </div>
             </div>
+
+            <img id="plusSign" src="static/images/plussign.png">
+            <img id="minusSign" src="static/images/minussign.png">
+            <img id="cog" src="static/images/cog.png">
+
         </main>
-
-        <footer>
-            <!--Content: The 2 icons described below, possibly a link to the portals landing page? (future version)-->
-            <div class="footer1">
-                <img height="50px" width="50px" id="plusSign" src="static/images/plussign.png">
-                <img height="50px" width="50px" id="minusSign" src="static/images/minussign.png">
-
-                
-                <!-- <span class="center">Portals</span>  -->
-            </div>
-            <div class="footer2">
-
-                <img height="58px" width="58px" id="cog" src="static/images/cog.png">
-            </div>
-        </footer>
     </body>
     <!--JS and JQuery scripts
         =================================-->

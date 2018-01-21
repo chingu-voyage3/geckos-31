@@ -13,13 +13,14 @@ main {
     grid-template-rows: 92% 8%;
 }
 .container {
-	width: 40%;
-    height:100%;
+	max-width: 40%;
+    max-height:100%;
 	margin: 20px auto;
 }
 
 #grid {
-    margin: 14% auto;
+    margin: 20% auto;
+    margin-bottom: 0;
     display:grid;
     grid-template-columns: 31% 31% 31%;
     grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
@@ -86,32 +87,57 @@ main {
     position: absolute;
     top: 50%;
     bottom: 10%;
-    right: 80%;
+    /* right: 80%; */
 }
 .right {
     position: absolute;
     top: 50%;
     bottom: 10%;
-    left: 80%;
+    min-width: 20%;
+    /* left: 80%; */
 } 
 
-footer {
+
+#plusSign {
     position: fixed;
-    bottom: 0px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-}
-.footer1 {
-    margin: 3% 3% 3% 8%;
-    text-align: left;
-    width: 100%;
+    left: 3%;
+    bottom: 3%;
+    height: 50px;
+    width: 50px;
+    opacity: 0.419;
 }
 
-.footer2 {
-    margin: 3% 8% 3% 3%;
-    text-align: right;
+#plusSign:hover {
+    height: 60px;
+    width: 60px;
+}
+
+#minusSign {
+    position: fixed;
+    left: 7.5%;
+    bottom: 3%;
+    height:50px;
+    width: 50px;
+    opacity: 0.419;
+}
+
+#minusSign:hover {
+    height:60px;
+    width: 60px;
+}
+
+#cog {
+    position:fixed;
+    bottom: 3%;
+    left: 93%;
+    height: 58px;
+    width: 58px;
+    opacity: 0.519;
+}
+
+#cog:hover {
+    height: 68px;
+    width: 68px;
 }
 
 .favicon {
@@ -161,6 +187,20 @@ footer {
 a {
     text-decoration: none;
     color: black;
+}
+
+.gridMenu {
+    height: 58px;
+    width: 75px;
+}
+
+.gridMenu * {
+    height: 20px;
+    width: 28px;
+    background: rgba(0, 0, 0, 0.419);
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 2px;
 }
 /*color options
 ==========================*/

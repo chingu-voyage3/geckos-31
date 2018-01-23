@@ -12,8 +12,13 @@ main {
     grid-template-columns: flex;
     grid-template-rows: 92% 8%;
 }
+
+.container, .right, .left {
+    display: inline-block;   
+}
+
 .container {
-	max-width: 40%;
+	width: 40%;
     max-height:100%;
 	margin: 20px auto;
 }
@@ -22,10 +27,9 @@ main {
     margin: 20% auto;
     margin-bottom: 0;
     display:grid;
-    grid-template-columns: 31% 31% 31%;
+    grid-template-columns: 33% 33% 33%;
     grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
     grid-row-gap: 10%;
-    grid-column-gap: 5.5%;
 }
 .square {
     display:grid;
@@ -87,15 +91,14 @@ main {
     position: absolute;
     top: 50%;
     bottom: 10%;
+    width: 30%;
 }
 .right {
     position: absolute;
     top: 50%;
     bottom: 10%;
-    min-width: 20%;
-    /* left: 80%; */
-} 
-
+    width: 30%;
+}
 
 #plusSign {
     position: fixed;

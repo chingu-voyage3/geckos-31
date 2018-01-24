@@ -22,7 +22,6 @@
 	text-align: center;
 	color: white;
 	vertical-align: middle;
-	padding-top: 5%;
 }
 .plusSignMenu input, .plusSignMenu select, .minusSignMenu input, .minusSignMenu select, .settingsMenu select {
 	height: 10%;

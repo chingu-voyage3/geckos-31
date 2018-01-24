@@ -58,10 +58,10 @@ function setTiles(tileList) {
             // icon.src = tileList[i].favicon;
             // icon.classList.add("favicon");
             
-            var titleDiv = tileHeader.appendChild(document.createElement("div"));
-            titleDiv.classList.add("titlediv");
+            // var titleDiv = tileHeader.appendChild(document.createElement("div"));
+            // titleDiv.classList.add("titlediv");
 
-            var siteName = titleDiv.appendChild(document.createElement("p"));
+            var siteName = tileHeader.appendChild(document.createElement("p"));
             siteName.innerHTML = tileList[i].title;
             
             var thumbnail = square.appendChild(document.createElement("img"))

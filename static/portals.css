@@ -7,11 +7,11 @@ html {
     font-size: 1.1em;
 
 }
-main {
+/* main {
     display: grid;
     grid-template-columns: flex;
     grid-template-rows: 92% 8%;
-}
+} */
 
 .container, .right, .left {
     display: inline-block;   
@@ -20,7 +20,7 @@ main {
 .container {
 	width: 40%;
     max-height:100%;
-	margin: 20px auto;
+	margin: 20px 30%;
 }
 
 #grid {
@@ -38,9 +38,8 @@ main {
     grid-row-gap: 10%;
     background-color: rgba(0, 0, 0, 0.419);
 	float: left;
-	margin: 2% 6.66%;
+	margin: 2% 2%;
     overflow:hidden;
-    /* box-shadow: 2px 2px 1px #888888; */
     text-transform:capitalize;
 }
 
@@ -67,14 +66,14 @@ main {
 
 .placeholder {
     display:grid;
-    width: 200px;
+    width: 180px;
     grid-template-columns: 100%;
     grid-template-rows: 25px 50px;
     grid-row-gap: 10%;
     background-color: white;
     opacity: .3;
     overflow:hidden;
-    margin: 2% 6.66%;
+    margin: 2% 2%;
 }
 
 .placeholder:hover {
@@ -90,12 +89,14 @@ main {
  .left {
     position: absolute;
     top: 50%;
+    left: 0;
     bottom: 10%;
     width: 30%;
 }
 .right {
     position: absolute;
     top: 50%;
+    right: 0;
     bottom: 10%;
     width: 30%;
 }
@@ -158,25 +159,28 @@ main {
     color: white;
     margin: auto;
     display: grid;
-    grid-template-columns: 30px 170px;
+    grid-template-columns: 30px 150px;
     grid-template-rows: 30px;
     font-family: 'Fira Sans', sans-serif;
 }
 
-.titlediv {
+.tileheader p {
     padding-top: 2%;
     overflow: none;
     padding-bottom: 4px;
-    width: 200px;
+    width: 180px;
     white-space: nowrap;
-}
-.titlediv p {
     text-align: center;
+    margin-top: 10px;
+    /* padding-left: 7px;
+    padding-right: 7px; */
+}
+/* .titlediv p {
     margin-top: 10px;
     padding-left: 7px;
     padding-right: 7px;
     color: inherit;
-}
+} */
 
 .square:hover .titlediv {
     color: black;
@@ -191,6 +195,9 @@ a {
     color: black;
 }
 
+a.urls {
+    width: 100%;
+}
 .gridMenu {
     height: 58px;
     width: 75px;

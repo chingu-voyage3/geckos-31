@@ -58,8 +58,8 @@ We will use manual testing to verify our scenarios, and document the results her
 | --- | --- |
 | see, click on, and access websites I have added to Portals when I open a new tab | Passing :white_check_mark: |
 | add a new website to my Portals grid, and I have the ability to customize the title displayed for that site |  Passing :white_check_mark: |
-| edit the names of websites in my grid | Not Passing :red_circle: |
-| remove websites from my grid | Not Passing :red_circle: |
+| edit the names of websites in my grid | Passing :white_check_mark: |
+| remove websites from my grid | Passing :white_check_mark: |
 | decide how many websites to display in the Portals grid when I open a new tab | Passing :white_check_mark: |
 | set a custom background color for my new tab page which can be altered at any time | Passing :white_check_mark: |
 

@@ -3,49 +3,26 @@ var tileList = [
     // {"title":"name of website",
     // "url":"url",
     // "screenshot":"thumbnail view",
-    // "favicon": "static/images/beautiful.ico"}
+    // "favicon": "static/images/beautiful.ico",
+    // "category": "uncategorized"}
 ]
 var grid = document.getElementById("grid");
 
-
-// onclick event for any tiles -
-function printTabInfo(url, favicon, tabId) {
-    console.log("URL is: " + url);
-    console.log("faviconURL is: " + favicon);
-    console.log("tabId is: " + tabId);
-    addFavIcon(favicon, url)
+function assignScreenshot(index, url) {
+    tileList[index].screenshot = url;
 }
 
-
-// if no favicon - tabs.getCurrent to populate the favicon url in tileList
-function addFavIcon(favicon, url) {
+function addFavIcon(favicon, index) { 
     let currentTiles = JSON.parse(window.localStorage.tilelist);
-    for (var i = 0; i < currentTiles.length; i++) {
-        // finds match in our current list
-        console.log("currentTiles url is: " + currentTiles[i].url);
-        console.log("url is: " + url);
-        if (currentTiles[i].url === url) {
-            console.log("match found")
-            match = true;
-            console.log(currentTiles[i].favicon);
-            // checks to see the default favicon is used
-            if (currentTiles[i].favicon === "static/images/beautifulicon.ico"){
-                console.log("resetting favicon")
-                currentTiles[i].favicon = favicon;
-                console.log(currentTiles[i].favicon);
-
-                //refresh items in grid
-                return saveTiles(currentTiles);
-            }
-        }
-    }
+    currentTiles[index].favicon = favicon;
+    currentTiles[index].screenshot = favicon;
+    return saveTiles(currentTiles);    
 }
 
 // TODO:
 // set last visited date to current time
-// captureVisibleTab - get screenshot image and save to tileList
 
-// Populates grid with items from tileList - title and link to URL only 
+// Populates grid with items from tileList 
 function setTiles(tileList) {
     grid.classList.add("grid");
     for (var i = 0; i < gridSize; i++) {
@@ -53,20 +30,22 @@ function setTiles(tileList) {
         if (i >= tileList.length) {
             var addMenuLink = grid.appendChild(document.createElement("a"));
             addMenuLink.href = "#plusSign";
-            // addMenuLink.classList.add("urls");
             var placeholder = addMenuLink.appendChild(document.createElement("div"));
             placeholder.classList.add("placeholder");
             var plusIcon = placeholder.appendChild(document.createElement("img"));
             plusIcon.src = "static/images/plussign.png"; 
+            plusIcon.alt = "Add a tile";
             plusIcon.classList.add("plus-sign");
             placeholder.addEventListener('click', function () {
-                plusSignMenu.classList.toggle('hidden');
+                toggleHideMenu(plusSignMenu);
             })
         
         } else {
             var link = grid.appendChild(document.createElement("a"));
             link.href = tileList[i].url;
             link.classList.add("urls");
+            link.addEventListener('click', checkTileData.bind( null, i) );
+            link.id = i;
             
             var square = link.appendChild(document.createElement("div"));
             square.classList.add("square");        
@@ -74,19 +53,19 @@ function setTiles(tileList) {
             var tileHeader = square.appendChild(document.createElement("div"));
             tileHeader.classList.add("tileheader");
 
-            var iconDiv = tileHeader.appendChild(document.createElement("div"));
-            var icon = iconDiv.appendChild(document.createElement("img"));
-            icon.src = tileList[i].favicon;
-            icon.classList.add("favicon");
+            // var iconDiv = tileHeader.appendChild(document.createElement("div"));
+            // var icon = iconDiv.appendChild(document.createElement("img"));
+            // icon.src = tileList[i].favicon;
+            // icon.classList.add("favicon");
             
-            var titleDiv = tileHeader.appendChild(document.createElement("div"));
-            titleDiv.classList.add("titlediv");
+            // var titleDiv = tileHeader.appendChild(document.createElement("div"));
+            // titleDiv.classList.add("titlediv");
 
-            var siteName = titleDiv.appendChild(document.createElement("span"));
+            var siteName = tileHeader.appendChild(document.createElement("p"));
             siteName.innerHTML = tileList[i].title;
             
             var thumbnail = square.appendChild(document.createElement("img"))
-            thumbnail.src = tileList[i].screenshot;
+            thumbnail.src = tileList[i].favicon;
             thumbnail.classList.add("thumbnail");
         }
         saveTiles(tileList);
@@ -155,4 +134,16 @@ if (window.localStorage.tilelist) {
 } else {
     console.log("Tilelist is probably: " + String(tileList.length));
     chrome.topSites.get(buildPopupDom);
+}
+// Logic to pull favicons!
+//==========================
+
+function checkTileData(index) {
+    var currentTile = tileList[index];    
+    if (currentTile.favicon === "static/images/beautifulicon.ico"){
+        chrome.runtime.sendMessage(
+            String(index)
+        );
+    }
+    // TODO: add check to see when updated last here
 }

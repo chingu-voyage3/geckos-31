@@ -7,17 +7,17 @@ html {
     font-size: 1.1em;
 
 }
-/* main {
-    display: grid;
-    grid-template-columns: flex;
-    grid-template-rows: 92% 8%;
-} */
+
+ main {
+    display: flex;
+} 
 
 .container, .right, .left {
     display: inline-block;   
 }
 
 .container {
+    display: flex;
 	width: 40%;
     max-height:100%;
 	margin: 20px 30%;
@@ -27,9 +27,10 @@ html {
     margin: 20% auto;
     margin-bottom: 0;
     display:grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 16% 16% 16% 16% 16% 16% 16% ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 10%;
+    grid-column-gap: 2.5%; 
 }
 .square {
     display:grid;
@@ -158,6 +159,7 @@ html {
     background: rgba(0, 0, 0, 0);
     color: white;
     margin: auto;
+    padding: 1.5%;
     display: grid;
     grid-template-columns: 30px 150px;
     grid-template-rows: 30px;

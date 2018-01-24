@@ -1,15 +1,14 @@
 .settingsMenu {
 	z-index: 100;
-	position: absolute;
-	bottom: 1.3em;
-	left: 89em;
+	position: fixed;
+	bottom: 12%;
+	right: 2%;
 	background-color: rgba(0, 0, 0, 0.419);
 	height: 230px;
 	width: 225px;
 	text-align: center;
 	color: white;
 	vertical-align: middle;
-	padding-top: 5%;
 }
 
 .plusSignMenu, #minusSignMenu {
@@ -23,7 +22,6 @@
 	text-align: center;
 	color: white;
 	vertical-align: middle;
-	padding-top: 5%;
 }
 .plusSignMenu input, .plusSignMenu select, .minusSignMenu input, .minusSignMenu select, .settingsMenu select {
 	height: 10%;

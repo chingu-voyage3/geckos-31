@@ -6,11 +6,10 @@
             ============================-->
             <!-- <link rel="icon" type="image/png" href="static/images/beautifulicon.ico" /> -->
             <link href="https://fonts.googleapis.com/css?family=Fira+Sans:500" rel="stylesheet">
-        <!--CSS and Bootstrap
+        <!--CSS
             ============================-->
             <link rel="stylesheet" href="static/portals.css">
             <link rel="stylesheet" href="static/menus.css">
-            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css">-->
         </head>
         <body>
 
@@ -24,10 +23,10 @@
                         
                         <select id="tileCategory" placeholder="choose category" list="categoryList">
                             <option value="none" class="grey" selected disabled >Choose a category below <span class="arrow">&#9662;</span></option>
+                            <option value="Coding">Coding</option>
                             <option value="Productivity">Productivity</option>
                             <option value="Entertainment">Entertainment</option>
                             <option value="News">News</option>
-                            <option value="Crafts">Crafts</option>
                             <option value="Uncategorized">Uncategorized</option>
                         </select>
                         <div>
@@ -39,14 +38,14 @@
                     <div id="minusSignMenu" class="minusSignMenu hidden">
                         <h3>Edit or delete a tile</h3>
                         <p>Click a tile to edit or delete</p>
-                        <input type="text" id="editTileUrl" placeholder="URL - must include http(s)://" required/>
                         <input type="text" id="editTileTitle" placeholder="edit name of website here" required/>
+                        <input type="text" id="editTileUrl" placeholder="URL - must include http(s)://" required/>                        
                         <select id="tileEditCategory" placeholder="choose category" list="categoryList">
                             <option value="none" class="grey" selected disabled >Choose a category below<span class="arrow">&#9662;</span></option>
+                            <option value="Coding">Coding</option>
                             <option value="Productivity">Productivity</option>
                             <option value="Entertainment">Entertainment</option>
                             <option value="News">News</option>
-                            <option value="Crafts">Crafts</option>
                             <option value="Uncategorized">Uncategorized</option>
                         </select>
                         <button id="editTileButton">Save Edits</button>
@@ -55,7 +54,6 @@
 
                     </div>
                 </div>
-                <!--Content: The grid of links, possibly using bootstrap cards?-->
                 <div class="container">
                     <div id="grid"> 
                     </div>
@@ -83,8 +81,8 @@
                     <select id="background-choice">
 
                         <option value="none" class="grey" selected disabled >Choose background style below<span class="arrow">&#9662;</span></option>
-                        <option value="gradient">Gradient</option>
                         <option value="animated-gradient">Animated Gradient</option>
+                        <option value="gradient">Gradient</option>
                         <option value="solid-fill">Solid Color</option>                        
                         <option value="no-color">No Background</option>
                         
@@ -98,7 +96,7 @@
 
         </main>
     </body>
-    <!--JS and JQuery scripts
+    <!--JS scripts
         =================================-->
         <script src="gridSize.js"></script>
         <script src="portals.js"></script>
@@ -109,12 +107,6 @@
         <script src="chromeBackground.js"></script>
         
 
-    <!--<script
-        src="http://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     </html>
 
 <!--Requirements

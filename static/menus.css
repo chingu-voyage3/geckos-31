@@ -48,7 +48,7 @@ select#tileCategory, select#gridSize, select#background-choice{
 }
 
 #minusSignMenu {
-	height: 345px; 
+	height: 355px; 
 }
 
 #deleteTileButton {
